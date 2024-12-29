@@ -1,3 +1,0 @@
-Week 1:
-Docker and Terraform
-
