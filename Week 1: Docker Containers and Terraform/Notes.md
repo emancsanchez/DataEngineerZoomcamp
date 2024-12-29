@@ -101,6 +101,22 @@ ENTRYPOINT ['Python' , 'pipeline.py']
 
 # <ins> Ingesting NY Taxi Data to Postgres </ins>
 
+This is the docker comment to run in terminal:
+
+```
+docker run -it \
+  -e POSTGRES=USER="root" \
+  -e POSTGRES_PASSWORD="root" \
+  -e POSTGRES_DB="ny_taxi" \
+  -v $(pwd)/ny_taxi_postgres_data: /var/lib/postgressqp/data \
+  -p 5432:5432 \
+postgres:13
+```
+
+
+
+
+
 
 
 
