@@ -105,7 +105,7 @@ This is the docker comment to run in terminal:
 
 ```
 docker run -it \
-  -e POSTGRES=USER="root" \
+  -e POSTGRES_USER="root" \
   -e POSTGRES_PASSWORD="root" \
   -e POSTGRES_DB="ny_taxi" \
   -v $(pwd)/ny_taxi_postgres_data: /var/lib/postgressqp/data \
