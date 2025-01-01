@@ -114,6 +114,30 @@ postgres:13
 ```
 
 
+Connecting to postgres database and sending to postgres database:
+
+sqlalchemy, import create engine, create an engine that links to database in format:  
+
+
+```
+from sqlalchemy import create_engine
+
+engine = create_engine('<database server>://<username>:<password>@<localhost>:<port>/<database name>')
+```
+
+while this established connection, no feedback if it works, in order to check connection run:
+
+```
+engine.connect()
+```
+
+In pandas, connection can be established using:
+
+```
+pd.io.sql.get_schema(<dataframe>, name='<name of database>', con=<engine)
+```
+
+
 
 
 
