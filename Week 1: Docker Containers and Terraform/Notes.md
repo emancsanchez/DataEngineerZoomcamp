@@ -137,7 +137,48 @@ In pandas, connection can be established using:
 pd.io.sql.get_schema(<dataframe>, name='<name of database>', con=<engine)
 ```
 
+Converting columns to timestamps specifically the tpep_pickup_datetime and tpep_droppoff_datetime:
 
+```
+df.tpep_pickup_datetime = pd.to_datetime(df.tpep_pickup_datetime)
+df.tpep_dropoff_datetime = pd.to_datetime(df.tpep_dropoff_datetime)
+```
+
+
+
+Iterator:
+
+```
+df_iter = pd.read_csv('yellow_tripdata_2021-01.csv', iterator=True, chunksize=1000000)
+
+df = next(df_iter)
+
+#creating table in postgres
+
+df.head(n=0).to_sql(name='yellow_taxi_data', con=engine, if_exists = 'replace')
+INSERTS header for table with table name
+
+df.to_sql(name='yellow_taxi_data', con = engine, if_exists='append'
+```
+
+
+
+Now in order to load the whole 1.03 million row data set, run while loop:  
+Various print statements also help with error handling and figuring out timing etc.
+
+```
+while True:
+  t_start = time()
+  df = next(df_iter)
+  df.tpep_pickup_datetime = pd.to_datetime(pd.tpep_pikckup_datetime)
+  df.tpep_dropoff_datetime = pd.to_datetime(pd.tpep_dropoff_datetime)
+
+  df.to_sql(name='yellow_taxi_data', con=engine, if_exists='append')
+
+  t_end = time()
+
+  print(insert another cunk, took %.3f second' % (t_end - t_start)
+```
 
 
 
