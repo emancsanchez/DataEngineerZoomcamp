@@ -181,6 +181,46 @@ while True:
 ```
 
 
+Convert this ingestion notebook script into python script:
+
+```
+jupyter nbconvert --to=script <name of script to be converted>.py
+jupyter nbconvert --to=script ingestion_script.ipynb
+```
+
+subsequently converts it to .py file
+
+
+docker compose:  
+
+docker-compose.yaml:  
+
+```
+services:
+  pgdatabase:
+    image: postgres13
+    environment:
+      -POSTGRES_USER=root
+      -POSTGRES_PASSWORD=root
+      -POSTGES_DB=ny_taxi
+    volumes:
+      - "./ny_taxi_postgres_data:/var/lib/postgresql/data:rw"
+    ports:
+    - "5432:5432"
+  pgadmin:
+    image: dpage/pgadmin4
+    environtment:
+      -PGADMIN_DEFAULT_EMAIL = admin@admin.com
+      -PGADMIN_DEFAULT_PASSWORD = root
+    ports:
+      - "8080:80"
+```
+
+Now, run docker compose up to bring up the container with the network,
+then run docker compose down to shut dodwn the container and network.
+
+
+
 
 
 
