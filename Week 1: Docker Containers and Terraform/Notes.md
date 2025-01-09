@@ -221,6 +221,82 @@ then run docker compose down to shut dodwn the container and network.
 
 
 
+# <ins>TERRAFORM INTRODUCTION</ins>
+
+IaC - Infrastructure as code  
+In a file, you can read, see parameters, sizes of disk, types of storage.  
+All can be read so you know what you're working with.  
+Collaboration
+Reproducability.  
+Ensure resources are removed:  
+Charges keep going if server or compute is still running, even if idle.  
+
+Terrform does not manage and update code on infrastructure.  
+Does not give ability to change immutable resources  
+Not manage resources not defined in terraform file  
+
+## **<ins>Providers: Code that allows terraform communication and resource management</ins>**
+AWS  
+Azure  
+GCP  
+Kubernetes  
+VSphere  
+Alibaba Cloud  
+Oracle Cloud infra  
+Active Directory  
+
+### <ins> Key Terraform Commands </ins>
+
+init - get me providers I need  
+Plan - What am i about to do?  
+Apply - Do what is in tf files  
+Destroy - remove everything in tf files
+
+
+##  *** Creating GCP service account **  
+
+IAM & Admin  
+create service account
+
+service account permissions:
+
+Manage keys  
+Add key or create a new key:  
+JSON format
+
+save json in named json file in keys directory.  
+
+
+
+
+main.tf file: 
+
+```
+terraform {
+  required_providers {
+    google = {
+      source = "hashicorp/google"
+      version = "5.6.0"
+      }
+    }
+}
+
+provider "google" {
+    credentials = '<path>/keys/<jsonfile.json>'
+  project = "my-project-id"
+  region = "us-eastorwest"
+}
+```
+after main.tf created:  
+run:  
+terraform init  
+
+creating a storage bucket on GCP:  
+
+
+
+
+
 
 
 
