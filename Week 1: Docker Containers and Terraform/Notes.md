@@ -266,6 +266,8 @@ JSON format
 
 save json in named json file in keys directory.  
 
+Code ahead shows where credentials would be
+
 
 
 
@@ -291,8 +293,70 @@ after main.tf created:
 run:  
 terraform init  
 
+
+
 creating a storage bucket on GCP:  
 
+
+
+
+
+
+
+documentation has resource listings that you can use.   
+
+After modifying and main.tf file, you could run:  
+```
+terraform plan
+```
+in terminal which shows what will happen with resources.
+
+
+Terrafrom Destroy  
+
+Erases or "undeploys" if thats even a word - resources in main.tf 
+
+
+#<ins>** IF PUSHING TO GITHUB ** </ins>
+.gitignore  
+defines what not to push to github, depending on what project you're workjing on.
+service account keys and files are to be ignored including json files.
+
+
+## Variables Terrform  
+
+variables.tf:  
+
+```
+variable "location"{
+description = "rpoject locaiton"
+default = "US"
+
+}
+
+variable "bq_dataset_name" {
+description = "Big query dataset naem"
+default = "demo Dataset"
+}
+
+variable "gcs_bucket_name" {
+description = "bucket name"
+default = "project_id_bucketname"
+}
+```
+
+main.tf file is now updated with variables:
+
+```
+resource "google_bigq_dataset" {
+dataset_id = var.bq_dataset_name
+location = var.location
+
+
+}
+
+
+```
 
 
 
