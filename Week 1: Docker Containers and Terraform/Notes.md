@@ -317,7 +317,7 @@ Terrafrom Destroy
 Erases or "undeploys" if thats even a word - resources in main.tf 
 
 
-#<ins>** IF PUSHING TO GITHUB ** </ins>
+#<ins>** IF PUSHING TO GITHUB ** </ins>  
 .gitignore  
 defines what not to push to github, depending on what project you're workjing on.
 service account keys and files are to be ignored including json files.
@@ -349,14 +349,24 @@ main.tf file is now updated with variables:
 
 ```
 resource "google_bigq_dataset" {
+credentials = file(var.credentials)  # SEE NEXT CODESPACE
 dataset_id = var.bq_dataset_name
 location = var.location
-
-
 }
 
+```
+
+setting file location in variable.tf:  
 
 ```
+variable "credentials" {
+description = "credential file"
+default = "./<filepath>/<filename>.json"
+```
+
+FUNCTION ARE NOT TO BE CALLED IN VARIABLE FILE BUT IN main.tf
+
+}
 
 
 
