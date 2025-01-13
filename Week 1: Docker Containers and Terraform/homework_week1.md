@@ -7,7 +7,12 @@ What's the version of pip in the image?
 ~~24.2.1~~  
 ~~23.3.1~~   
 ~~23.2.1~~  
-  
+
+```
+root@ae27c94528d6:/# pip --version
+pip 24.3.1 from /usr/local/lib/python3.12/site-packages/pip (python 3.12)
+```
+
 ### Question 2. Understanding Docker networking and docker-compose
 Given the following docker-compose.yaml, what is the hostname and port that pgadmin should use to connect to the postgres database?
 
