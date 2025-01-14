@@ -68,20 +68,58 @@ You can use the code from the course. It's up to you whether you want to use Jup
 ### Question 3. Trip Segmentation Count
 During the period of October 1st 2019 (inclusive) and November 1st 2019 (exclusive), how many trips, respectively, happened:
 
-Up to 1 mile  
-In between 1 (exclusive) and 3 miles (inclusive),  
-In between 3 (exclusive) and 7 miles (inclusive),  
-In between 7 (exclusive) and 10 miles (inclusive),  
-Over 10 miles  
+
   
 Answers:  
 
-104,793; 197,670; 110,612; 27,831; 35,281  
-104,793; 198,924; 109,603; 27,678; 35,189  
-101,056; 201,407; 110,612; 27,831; 35,281  
-101,056; 202,661; 109,603; 27,678; 35,189  
-104,838; 199,013; 109,645; 27,688; 35,202  
+~~104,793; 197,670; 110,612; 27,831; 35,281~~ 
+~~104,793; 198,924; 109,603; 27,678; 35,189~~  
+~~101,056; 201,407; 110,612; 27,831; 35,281~~  
+~~101,056; 202,661; 109,603; 27,678; 35,189~~  
+**<ins>104,838; 199,013; 109,645; 27,688; 35,202</ins>** 
 
+```
+Up to 1 mile
+
+SELECT COUNT(*)
+FROM green_taxi_data
+WHERE trip_distance <= 1;
+
+104838
+
+In between 1 (exclusive) and 3 miles (inclusive)
+
+SELECT COUNT(*)
+FROM green_taxi_data
+WHERE trip_distance > 1 AND trip_distance <= 3;
+
+199013
+  
+In between 3 (exclusive) and 7 miles (inclusive)
+
+SELECT COUNT(*)
+FROM green_taxi_data
+WHERE trip_distance > 3 AND trip_distance <= 7;
+
+109645
+  
+In between 7 (exclusive) and 10 miles (inclusive)
+
+SELECT COUNT(*)
+FROM green_taxi_data
+WHERE trip_distance > 7 AND trip_distance <= 10;
+
+27688
+  
+Over 10 miles
+
+SELECT COUNT(*)
+FROM green_taxi_data
+WHERE trip_distance > 10;
+
+35202
+
+```
 
 ### Question 4. Longest trip for each day
 Which was the pick up day with the longest trip distance? Use the pick up time for your calculations.
