@@ -221,11 +221,26 @@ Note: it's tip , not trip
 
 We need the name of the zone, not the ID.  
 
-Yorkville West  
-JFK Airport  
-East Harlem North  
-East Harlem South  
+```
+Yorkville West - 263
+JFK Airport - 132
+East Harlem North - 74  
+East Harlem South - 75
 
+
+select gt."DOLocationID", z."Zone", ROUND( max(tip_amount)::numeric, 2)
+from green_taxi_data as gt
+LEFT JOIN zone as z ON z."LocationID" = gt."DOLocationID"
+WHERE gt."PULocationID" = 74 AND gt."DOLocationID" IN (263, 132, 74, 75)
+Group By gt."DOLocationID", z."Zone";
+
+"DOLocationID"	"Zone"	"round"
+74	"East Harlem North"	40.00
+75	"East Harlem South"	6.92
+132	"JFK Airport"	     87.30
+263	"Yorkville West"	80.88
+
+```
 
 
  ***Terraform***  
