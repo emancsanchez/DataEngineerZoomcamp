@@ -167,10 +167,52 @@ Which were the top pickup locations with over 13,000 in total_amount (across all
 
 Consider only lpep_pickup_datetime when filtering by date.  
 
-East Harlem North, East Harlem South, Morningside Heights  
-East Harlem North, Morningside Heights  
-Morningside Heights, Astoria Park, East Harlem South  
-Bedford, East Harlem North, Astoria Park  
+```
+PULocationID =
+74 - East Harlem North
+75 - East Harlem South
+166 - Morningside Heights
+8-Astoria Park
+17 - Bedford
+
+
+East Harlem North, East Harlem South, Morningside Heights
+
+select ROUND( sum(total_amount)::numeric, 2) 
+from green_taxi_data as gt
+LEFT JOIN zone as z ON z."LocationID" = gt."PULocationID"
+WHERE DATE(gt."lpep_pickup_datetime") = '2019-10-18' AND gt."PULocationID" IN (74, 75, 166);
+
+48,513.73
+
+
+East Harlem North, Morningside Heights
+
+select ROUND( sum(total_amount)::numeric, 2) 
+from green_taxi_data as gt
+LEFT JOIN zone as z ON z."LocationID" = gt."PULocationID"
+WHERE DATE(gt."lpep_pickup_datetime") = '2019-10-18' AND gt."PULocationID" IN (74, 166);
+
+31,716.47
+
+Morningside Heights, Astoria Park, East Harlem South
+
+select ROUND( sum(total_amount)::numeric, 2) 
+from green_taxi_data as gt
+LEFT JOIN zone as z ON z."LocationID" = gt."PULocationID"
+WHERE DATE(gt."lpep_pickup_datetime") = '2019-10-18' AND gt."PULocationID" IN (166, 8, 75);
+
+29,827.05
+
+Bedford, East Harlem North, Astoria Park
+
+select ROUND( sum(total_amount)::numeric, 2) 
+from green_taxi_data as gt
+LEFT JOIN zone as z ON z."LocationID" = gt."PULocationID"
+WHERE DATE(gt."lpep_pickup_datetime") = '2019-10-18' AND gt."PULocationID" IN (74,17, 8);
+
+21,128.33
+```
 
 ### Question 6. Largest tip
 For the passengers picked up in Ocrober 2019 in the zone name "East Harlem North" which was the drop off zone that had the largest tip?  
@@ -183,6 +225,8 @@ Yorkville West
 JFK Airport  
 East Harlem North  
 East Harlem South  
+
+
 
  ***Terraform***  
 In this section homework we'll prepare the environment by creating resources in GCP with Terraform.  
