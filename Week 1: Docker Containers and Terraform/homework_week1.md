@@ -126,10 +126,40 @@ Which was the pick up day with the longest trip distance? Use the pick up time f
 
 Tip: For every day, we only care about one single trip with the longest distance.
 
+```
 2019-10-11
+
+select max(trip_distance)
+from green_taxi_data
+WHERE lpep_pickup_datetime BETWEEN '2019-10-11 00:00:00' AND '2019-10-11 11:59:59' ;
+
+46.84
+
 2019-10-24
+
+select max(trip_distance)
+from green_taxi_data
+WHERE lpep_pickup_datetime BETWEEN '2019-10-24 00:00:00' AND '2019-10-24 11:59:59' ;
+
+90.75
+
 2019-10-26
-2019-10-31  
+
+select max(trip_distance)
+from green_taxi_data
+WHERE lpep_pickup_datetime BETWEEN '2019-10-26 00:00:00' AND '2019-10-26 11:59:59' ;
+
+91.56
+
+2019-10-31
+
+select max(trip_distance)
+from green_taxi_data
+WHERE lpep_pickup_datetime BETWEEN '2019-10-31 00:00:00' AND '2019-10-31 11:59:59' ;
+
+37
+
+```
 
 
 ### Question 5. Three biggest pickup zones
