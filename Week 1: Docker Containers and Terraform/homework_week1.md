@@ -48,11 +48,11 @@ volumes:
     name: vol-pgadmin_data
 ```
 
-postgres:5433  
-localhost:5432  
-db:5433  
-postgres:5432  
-db:5432  
+~~postgres:5433~~  
+~~localhost:5432~~  
+~~db:5433~~  
+**<ins>postgres:5432</ins>**  
+~~db:5432~~  
 
 Prepare Postgres  
 Run Postgres and load data as shown in the videos We'll use the green taxi trips from October 2019:  
