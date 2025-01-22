@@ -16,17 +16,29 @@ What is the value of the variable file when the inputs taxi is set to green, yea
 
 How many rows are there for the Yellow Taxi data for the year 2020?  
 
-13,537.299  
+~~13,537.299~~  
 24,648,499  
-18,324,219  
-29,430,127  
+~~18,324,219~~  
+~~29,430,127~~
+
+```
+select count(*)
+FROM yellow_tripdata
+where tpep_pickup_datetime > '2019-12-31' AND tpep_pickup_datetime < '2021-01-01';
+```
 
 How many rows are there for the Green Taxi data for the year 2020?  
 
-5,327,301  
-936,199  
+~~5,327,301~~  
+~~936,199~~  
 1,734,051  
-1,342,034  
+~~1,342,034~~  
+
+```
+select count(*)
+FROM green_tripdata
+where lpep_pickup_datetime > '2019-12-31' AND lpep_pickup_datetime < '2021-01-01';
+```
 
 Using dbt on the Green and Yellow Taxi data for the year 2020, how many rows are there in the fact_trips table?  
 
