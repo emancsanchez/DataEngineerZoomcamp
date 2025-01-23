@@ -43,9 +43,9 @@ where lpep_pickup_datetime > '2019-12-31' AND lpep_pickup_datetime < '2021-01-01
 Using dbt on the Green and Yellow Taxi data for the year 2020, how many rows are there in the fact_trips table?  
 
 198  
-165  
-151  
-203  
+~~165~~  
+~~151~~  
+~~203~~  
 
 How would you configure the timezone to New York in a Schedule trigger?  
 
