@@ -45,11 +45,28 @@ Using dbt on the Green and Yellow Taxi data for the year 2020, how many rows are
 198  
 ~~165~~  
 ~~151~~  
-~~203~~  
+~~203~~
+
+```
+SELECT COUNT(*)
+FROM fact_trips;
+```
 
 How would you configure the timezone to New York in a Schedule trigger?  
 
-Add a timezone property set to EST in the Schedule trigger configuration  
+~~Add a timezone property set to EST in the Schedule trigger configuration~~  
 Add a timezone property set to America/New_York in the Schedule trigger configuration  
-Add a timezone property set to UTC-5 in the Schedule trigger configuration  
-Add a location property set to New_York in the Schedule trigger configuration  
+~~Add a timezone property set to UTC-5 in the Schedule trigger configuration~~  
+~~Add a location property set to New_York in the Schedule trigger configuration~~
+
+```
+Timezone
+By default, Kestra will handle all dates using your system's timezone. You can change the timezone using the user.timezone JVM option.
+
+Changing the timezone will mostly affect:
+
+scheduler: by default, all schedule dates are UTC; changing the Java timezone will allow scheduling the flow in your timezone.
+logs display: in your configured timezone.
+```
+
+
