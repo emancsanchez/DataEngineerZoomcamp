@@ -39,7 +39,8 @@ select count(*)
 FROM green_tripdata
 where lpep_pickup_datetime > '2019-12-31' AND lpep_pickup_datetime < '2021-01-01';
 ```
-
+*********************************************************************************
+This question was removed  
 Using dbt on the Green and Yellow Taxi data for the year 2020, how many rows are there in the fact_trips table?  
 
 198  
@@ -51,6 +52,23 @@ Using dbt on the Green and Yellow Taxi data for the year 2020, how many rows are
 SELECT COUNT(*)
 FROM fact_trips;
 ```
+**********************************************************************************
+
+Question 5. Number of rows (yellow, March 2021) (1 point)  
+
+~~1,428,092~~  
+~~706,911~~    
+1,925,152  
+~~2,561,031~~   
+
+```
+select count(*)
+FROM yellow_tripdata
+Where tpep_pickup_datetime > '2021-03-01' AND tpep_pickup_datetime < '2021-03-31';
+```
+
+returns:  
+1857586
 
 How would you configure the timezone to New York in a Schedule trigger?  
 
