@@ -31,10 +31,17 @@ doubling the estimated bytes processed.
 
 ## Question 4:
 How many records have a fare_amount of 0?
-- 128,210
-- 546,578
-- 20,188,016
+- ~~128,210~~
+- ~~546,578~~
+- ~~20,188,016~~
 - 8,333
+
+```
+SELECT count(*) FROM `cobalt-ship-447822-v8.ny_taxi.fhv_nonpartitioned_tripdata`
+WHERE fare_amount = 0;
+
+8333
+```
 
 ## Question 5:
 What is the best strategy to make an optimized table in Big Query if your query will always filter based on tpep_dropoff_datetime and order the results by VendorID (Create a new table with this strategy)
