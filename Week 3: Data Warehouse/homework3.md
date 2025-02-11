@@ -68,10 +68,10 @@ Choose the answer which most closely matches.</br>
 ## Question 7: 
 Where is the data stored in the External Table you created?
 
-- Big Query
-- Container Registry
+- ~~Big Query~~
+- ~~Container Registry~~
 - GCP Bucket
-- Big Table
+- ~~Big Table~~
 
 ## Question 8:
 It is best practice in Big Query to always cluster your data:
