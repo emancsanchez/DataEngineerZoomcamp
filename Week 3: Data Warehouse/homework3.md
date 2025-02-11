@@ -6,6 +6,16 @@ Question 1: What is count of records for the 2024 Yellow Taxi Data?
 20,332,093  
 85,431,289  
 
+
+
+
+```
+SELECT count(*) FROM `cobalt-ship-447822-v8.ny_taxi.external_table_tripdate`;
+
+
+20,332,093
+```
+
 Question 2:  
 
 Write a query to count the distinct number of PULocationIDs for the entire dataset on both the tables.  
