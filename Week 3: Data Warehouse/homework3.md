@@ -32,7 +32,7 @@ doubling the estimated bytes processed.
   ```
   SELECT PUlocationID FROM `cobalt-ship-447822-v8.ny_taxi.fhv_nonpartitioned_tripdata`;
   SELECT PUlocationID, DOLocationID FROM `cobalt-ship-447822-v8.ny_taxi.fhv_nonpartitioned_tripdata`;
- ```
+  ```
 
 ## Question 4:
 How many records have a fare_amount of 0?
@@ -42,11 +42,12 @@ How many records have a fare_amount of 0?
 - 8,333
 
 ```
-SELECT count(*) FROM `cobalt-ship-447822-v8.ny_taxi.fhv_nonpartitioned_tripdata`
+SELECT count(*) FROM `cobalt-ship-447822-v8.ny_taxi.fhv_nonpartitioned_tripdata`;
 WHERE fare_amount = 0;
 
 8333
 ```
+
 
 ## Question 5:
 What is the best strategy to make an optimized table in Big Query if your query will always filter based on tpep_dropoff_datetime and order the results by VendorID (Create a new table with this strategy)
