@@ -51,9 +51,9 @@ WHERE fare_amount = 0;
 
 ## Question 5:
 What is the best strategy to make an optimized table in Big Query if your query will always filter based on tpep_dropoff_datetime and order the results by VendorID (Create a new table with this strategy)
-- ~~Partition by tpep_dropoff_datetime and Cluster on VendorID~~
+- Partition by tpep_dropoff_datetime and Cluster on VendorID
 - ~~Cluster on by tpep_dropoff_datetime and Cluster on VendorID~~
-- Cluster on tpep_dropoff_datetime Partition by VendorID
+- ~~Cluster on tpep_dropoff_datetime Partition by VendorID~~
 - ~~Partition by tpep_dropoff_datetime and Partition by VendorID~~
 
 ```
@@ -73,10 +73,10 @@ Use the materialized table you created earlier in your from clause and note the 
 
 Choose the answer which most closely matches.</br> 
 
-- 12.47 MB for non-partitioned table and 326.42 MB for the partitioned table
+- ~~12.47 MB for non-partitioned table and 326.42 MB for the partitioned table~~
 - 310.24 MB for non-partitioned table and 26.84 MB for the partitioned table
-- 5.87 MB for non-partitioned table and 0 MB for the partitioned table
-- 310.31 MB for non-partitioned table and 285.64 MB for the partitioned table
+- ~~5.87 MB for non-partitioned table and 0 MB for the partitioned table~~
+- ~~310.31 MB for non-partitioned table and 285.64 MB for the partitioned table~~
 
 
 ## Question 7: 
@@ -89,7 +89,7 @@ Where is the data stored in the External Table you created?
 
 ## Question 8:
 It is best practice in Big Query to always cluster your data:
-- True
+- ~~True~~
 - False
 
 ## (Bonus: Not worth points) Question 9:
