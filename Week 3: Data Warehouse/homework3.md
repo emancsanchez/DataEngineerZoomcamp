@@ -51,10 +51,18 @@ WHERE fare_amount = 0;
 
 ## Question 5:
 What is the best strategy to make an optimized table in Big Query if your query will always filter based on tpep_dropoff_datetime and order the results by VendorID (Create a new table with this strategy)
-- Partition by tpep_dropoff_datetime and Cluster on VendorID
-- Cluster on by tpep_dropoff_datetime and Cluster on VendorID
+- ~~Partition by tpep_dropoff_datetime and Cluster on VendorID~~
+- ~~Cluster on by tpep_dropoff_datetime and Cluster on VendorID~~
 - Cluster on tpep_dropoff_datetime Partition by VendorID
-- Partition by tpep_dropoff_datetime and Partition by VendorID
+- ~~Partition by tpep_dropoff_datetime and Partition by VendorID~~
+
+```
+CREATE OR REPLACE TABLE `cobalt-ship-447822-v8.ny_taxi.part_tripdata_clusttpep_tpep_part_vend`
+PARTITION BY RANGE_BUCKET(VendorID, GENERATE_ARRAY(1, 3, 1))  
+CLUSTER BY tpep_dropoff_datetime AS (
+  SELECT * FROM `cobalt-ship-447822-v8.ny_taxi.external_table_tripdate`
+);
+```
 
 
 ## Question 6:
