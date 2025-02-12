@@ -29,6 +29,11 @@ doubling the estimated bytes processed.
 - BigQuery automatically caches the first queried column, so adding a second column increases processing time but does not affect the estimated bytes scanned.
 - When selecting multiple columns, BigQuery performs an implicit join operation between them, increasing the estimated bytes processed
 
+  ```
+  SELECT PUlocationID FROM `cobalt-ship-447822-v8.ny_taxi.fhv_nonpartitioned_tripdata`;
+  SELECT PUlocationID, DOLocationID FROM `cobalt-ship-447822-v8.ny_taxi.fhv_nonpartitioned_tripdata`;
+ ```
+
 ## Question 4:
 How many records have a fare_amount of 0?
 - ~~128,210~~
