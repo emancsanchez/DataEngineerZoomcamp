@@ -1,0 +1,51 @@
+{
+    "path_count": 161,
+    "parsed_path_count": 161,
+    "static_analysis_path_count": 2,
+    "static_analysis_parsed_path_count": 2,
+    "is_partial_parse_enabled": true,
+    "is_static_analysis_enabled": true,
+    "read_files_elapsed": 0.015929202549159527,
+    "load_macros_elapsed": 0.5875808540731668,
+    "parse_project_elapsed": 0.33055787812918425,
+    "patch_sources_elapsed": 1.2168660759925842e-05,
+    "process_manifest_elapsed": 0.02062045130878687,
+    "load_all_elapsed": 1.00752804428339,
+    "projects": [
+        {
+            "project_name": "my_new_project",
+            "elapsed": 0.32842160388827324,
+            "parsers": [
+                {
+                    "parser": "model",
+                    "elapsed": 0.1845787102356553,
+                    "parsed_path_count": 2
+                },
+                {
+                    "parser": "test",
+                    "elapsed": 0.1427545351907611,
+                    "parsed_path_count": 1
+                }
+            ],
+            "parsed_path_count": 3
+        },
+        {
+            "project_name": "dbt_bigquery",
+            "elapsed": 0.0010911496356129646,
+            "parsers": [],
+            "parsed_path_count": 0
+        },
+        {
+            "project_name": "dbt",
+            "elapsed": 0.0009421482682228088,
+            "parsers": [
+                {
+                    "parser": "doc",
+                    "elapsed": 0.00020430702716112137,
+                    "parsed_path_count": 1
+                }
+            ],
+            "parsed_path_count": 1
+        }
+    ]
+}
