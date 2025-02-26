@@ -2,8 +2,8 @@ version: 2
 
 sources:
   - name: staging
-    database: "{{ env_var('DBT_DATABASE', 'cobalt-ship-447822-v8') }}"
-    schema: "{{ env_var('DBT_SCHEMA', 'trips_data_all') }}"
+    database: cobalt-ship-447822-v8
+    schema: ny_taxi
       # loaded_at_field: record_loaded_at
     tables:
       - name: green_tripdata
@@ -105,7 +105,7 @@ models:
 
     - name: stg_yellow_tripdata
       description: > 
-        Trips made by New York City's iconic yellow taxis. 
+        Trips made by New York Citys iconic yellow taxis. 
         Yellow taxis are the only vehicles permitted to respond to a street hail from a passenger in all five
         boroughs. They may also be hailed using an e-hail app like Curb or Arro.
         The records were collected and provided to the NYC Taxi and Limousine Commission (TLC) by
