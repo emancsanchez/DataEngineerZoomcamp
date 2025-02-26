@@ -2,7 +2,7 @@ version: 2
 
 sources:
   - name: staging
-    database: "{{ env_var('DBT_DATABASE', 'taxi-rides-ny-339813-412521') }}"
+    database: "{{ env_var('DBT_DATABASE', 'cobalt-ship-447822-v8') }}"
     schema: "{{ env_var('DBT_SCHEMA', 'trips_data_all') }}"
       # loaded_at_field: record_loaded_at
     tables:
@@ -12,7 +12,7 @@ sources:
            # error_after: {count: 6, period: hour}
 
 models:
-    - name: stage_green_trip
+    - name: stg_green_tripdata
       description: >
         Trip made by green taxis, also known as boro taxis and street-hail liveries.
         Green taxis may respond to street hails,but only in the areas indicated in green on the
@@ -103,7 +103,7 @@ models:
           - name: Total_amount 
             description: The total amount charged to passengers. Does not include cash tips.
 
-    - name: stage_yellow_trip
+    - name: stg_yellow_tripdata
       description: > 
         Trips made by New York City's iconic yellow taxis. 
         Yellow taxis are the only vehicles permitted to respond to a street hail from a passenger in all five
